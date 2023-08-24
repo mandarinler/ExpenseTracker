@@ -78,7 +78,7 @@ export default function Home() {
           <form className='grid grid-cols-6 items-center text-black'>
             <input className='col-span-3 p-3 rounded-md focus:font-bold focus:placeholder:text-black border focus:outline-none'  type='text' placeholder='Enter Item' value={newItem.name} onChange={(e) => setNewItem({...newItem, name: e.target.value})}/>
             <input className='col-span-2 p-3 rounded-md focus:font-bold focus:placeholder:text-black mx-2 border focus:outline-none' type='Number' placeholder='Enter Amount' value={newItem.price} onChange={(e) => setNewItem({...newItem, price: e.target.value})}/>
-            <button className='text-white bg-slate-950 hover:bg-slate-900 p-3 text-xl hover:text-green-300' type='submit' onClick={addItem}>+</button>
+            <button className='text-white bg-slate-950 hover:bg-slate-900 p-3 text-xl hover:text-green-300 transition-all' type='submit' onClick={addItem}>+</button>
           </form>
           <ul>
             {items.map((item,id) => (
@@ -87,7 +87,7 @@ export default function Home() {
                   <span className="capitalize font-bold text-xl">{item.name}</span>
                   <span>${item.price}</span>
                 </div>
-                <button className="ml-8 p-4 border-l-2 border-slate-900 hover:bg-slate-900 w-16 hover:text-red-300 " onClick={() => deleteItem(item.id)}>X</button>
+                <button className="ml-8 p-4 border-l-2 border-slate-900 hover:bg-slate-900 w-16 hover:text-red-300 transition-all" onClick={() => deleteItem(item.id)}>X</button>
               </li>
             ))}
           </ul>
